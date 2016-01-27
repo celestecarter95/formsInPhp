@@ -4,57 +4,57 @@
 
 <?php
 
-    $first_name  = $_POST['first_name'];
-    $last_name   = $_POST['last_name'];
-    $email       = $_POST['email'];
-    $subject     = $_POST['subject'];
-    $user_message= $_POST['message'];
+    $grocery_store  = $_POST['grocery_store'];
+    $to = $_POST['email'];
+    $user_comment = $_POST['comment'];
 
-	$message = "
+    $shopping_list = "";
+    foreach ($_SESSION as $key => $value) {
+        $shopping_list .= "<li>$key : $value</li>";
+    }
+
+	$comment = "
 	<html>
 	<head>
-	  <title>$subject</title>
+	  <title>Shopping List</title>
 	</head>
 	<body>
-	  <p>$user_message</p>
-	  <p>$first_name $last_name</p>
+	  <h4>$grocery_store Shopping List</h4>
+	  <p>$user_comment</p>
+    <ol>
+        $shopping_list
+    </ol>
 	</body>
 	</html>
 	";
 
 
-    $to = 'celestecarter95@gmail.com';
     // To send HTML mail, the Content-type header must be set
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= "From: $email" . "\r\n";
+    //$headers .= "From: $email" . "\r\n";
 
-    mail($to, $subject, $message, $headers);
+    mail($to, "Shopping List", $comment, $headers);
 
 ?>
 
 <?php //print_r($_POST); ?>
 
 <div class="jumbotron">
-<p>
-    <strong>First Name:</strong>
-    <?= $first_name ?>
-</p>
+  <p>
+      <strong>Email send to:</strong>
+      <?= $to ?>
+  </p>
 
-<p>
-    <strong>Last Name:</strong>
-    <?= $last_name ?>
-</p>
+  <p>
+      <strong>Grocery Store:</strong>
+      <?= $grocery_store ?>
+  </p>
 
-<p>
-    <strong>Subject:</strong>
-    <?= $subject ?>
-</p>
-
-<p>
-    <strong>Message:</strong>
-    <?= $message ?>
-</p>
+  <p>
+      <strong>Email Sent:</strong>
+      <?= $user_comment ?>
+  </p>
 </div>
 
 <?php else: ?>

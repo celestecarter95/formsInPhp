@@ -30,35 +30,23 @@
 <div class="row jumbotron amber lighten-4">
     <form class="col s12" method="POST" action="contact_submit.php">
       <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" name="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+        <div class="input-field col s12">
+          <input id="grocery_store" name="grocery_store" type="text" class="validate">
+          <label for="grocery_store">Grocery Store</label>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" name="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
         <div class="input-field col s12">
           <input id="email" name="email" type="email" class="validate">
           <label for="email">Your Email</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="subject" name="subject" type="text" class="validate">
-          <label for="subject">Subject</label>
-        </div>
-      </div>
         <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" name="message" class="materialize-textarea"></textarea>
-              <label for="textarea1">Textarea</label>
+              <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
+              <label for="comment">Comment</label>
             </div>
           </div>
-        <button class="purple darken-2 waves-effect waves-light btn-large" type="submit" name="submit">Submit</button>
+        <button class="purple darken-2 waves-effect waves-light btn-large" type="submit" name="submit">Send</button>
       </div>
     </form>
+</div>
 
 <?php include('includes/footer.php'); ?>

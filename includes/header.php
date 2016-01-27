@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,9 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
     nav {
@@ -39,11 +43,12 @@
     <nav>
         <div class="nav-wrapper purple lighten-2">
             <div class="container-fluid">
-              <a href="#" class="brand-logo">Logo</a>
+              <a href="#" class="brand-logo">Email Shopping List</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="list.php">List</a></li>
                 <li><a href="contactme.php">Contact Me</a></li>
               </ul>
             </div>
         </div>
       </nav>
-    <div class="container-fluid content">
+    <div class="container content">
