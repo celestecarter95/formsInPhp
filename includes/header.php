@@ -47,6 +47,7 @@
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.php">List</a></li>
                 <li><a href="add_item.php">Add Item</a></li>
+                <li><a href="list.php">Session Shopping</a></li>
                 <li><a href="contactme.php">Contact Me</a></li>
               </ul>
             </div>
