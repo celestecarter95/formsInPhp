@@ -43,9 +43,10 @@
     <nav>
         <div class="nav-wrapper purple lighten-2">
             <div class="container-fluid">
-              <a href="#" class="brand-logo">Email Shopping List</a>
+              <a href="index.php" class="brand-logo">Email Shopping List</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="list.php">List</a></li>
+                <li><a href="index.php">List</a></li>
+                <li><a href="add_item.php">Add Item</a></li>
                 <li><a href="contactme.php">Contact Me</a></li>
               </ul>
             </div>
