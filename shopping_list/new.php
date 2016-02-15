@@ -1,5 +1,7 @@
 <?php require_once('../includes/header.php'); ?>
 
+<?php if(isset($_SESSION['login'])): ?>
+
 <div class="row">
     <form class="col s12" method="POST" action="create.php">
       <div class="row">
@@ -25,5 +27,10 @@
       </div>
     </form>
   </div>
+
+<?php else: ?>
+<?php header('Location: /formsInPhp/session/edit.php/'); ?>
+
+<?php endif ?>
 
 <?php require_once('../includes/footer.php'); ?>

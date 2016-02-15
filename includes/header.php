@@ -3,7 +3,7 @@
   session_start();
   //Connect to databse, require it instead of include it
   require_once('mysql.php');
-  //require_once('functions.php');
+  require_once('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -77,26 +77,24 @@
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper purple lighten-2">
-            <div class="container-fluid">
-              <a href="index.php" class="brand-logo">Email Shopping List</a>
-            </div>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.php">List</a></li>
-                <li><a href="new.php">Add Item</a></li>
-                <li><a href="list.php">Session Shopping</a></li>
-                <li><a href="contactme.php">Contact Me</a></li>
+        <div class="nav-wrapper purple lighten-2" style="padding: 0 25px;">
+          <?php $current_user = currentUser(); ?>
+            <a href="index.php" class="brand-logo">Welcome <?= $current_user['first_name']; ?></a>
 
-<!--
-                <?php //if(currentUser()): ?>
-                    Welcome <?= $current_user['first_name']; ?>
-                    <form method="post" action="/session/destroy.php">
-                      <input type="submit" name="submit" value="Sign out">
-                    </form>
-                <?php //else:  ?>
-                <?php //endif ?>
-                -->
+              <?php if($current_user): ?>
+                <form method="post" action="/formsInPhp/session/destroy.php">
+                      <input style="font-size: 1rem;" class="waves-effect waves-light right hide-on-med-and-down" type="submit" name="submit" value="Sign out">
+                </form>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/formsInPhp/shopping_list/index.php">List</a></li>
+                <li><a href="/formsInPhp/shopping_list/new.php">Add item</a></li>
               </ul>
+              <?php else: ?>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/formsInPhp/user/new.php">Sign up</a></li>
+                <li><a href="/formsInPhp/session/edit.php">Sign in</a></li>
+              </ul>
+              <?php endif ?>
         </div>
       </nav>
     <div class="container content">
