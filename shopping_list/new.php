@@ -1,7 +1,7 @@
-<?php include('includes/header.php'); ?>
+<?php require_once('../includes/header.php'); ?>
 
 <div class="row">
-    <form class="col s12" method="POST" action="index.php">
+    <form class="col s12" method="POST" action="create.php">
       <div class="row">
         <div class="input-field col s12">
           <input id="item" name="item" type="text" class="validate">
@@ -26,4 +26,4 @@
     </form>
   </div>
 
-<?php include('includes/footer.php'); ?>
+<?php require_once('../includes/footer.php'); ?>
