@@ -17,4 +17,22 @@
     }
   }
 
+  function strIfSet(&$str) {
+    if(isset($str)) {
+      return $str;
+    } else {
+      return "";
+    }
+  }
+
+  function errorMessageForField(&$errors, $field) {
+    if (isset($errors)) {
+      if (isset($errors[$field])) {
+        $error = $errors[$field];
+        return "<span class='error'>$error</span>";
+      }
+    }
+    return "";
+  }
+
 ?>

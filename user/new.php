@@ -8,21 +8,24 @@
         <form class="col s12" method="POST" action="create.php">
           <div class="row">
             <div class="input-field col s12">
-              <input id="first_name" name="first_name" type="text" class="validate">
+            <input id="first_name" name="first_name" type="text" class="validate" value="<?= strIfSet($first_name) ?>">
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s12">
-              <input id="last_name" name="last_name" type="text" class="validate">
+              <input id="last_name" name="last_name" type="text" class="validate" value="<?= strIfSet($last_name) ?>">
               <label for="last_name">Last Name</label>
             </div>
+            <div><?= errorMessageForField($errors, 'email') ?></div>
             <div class="input-field col s12">
-              <input id="email" name="email" type="email" class="validate">
+              <input id="email" name="email" type="email" class="validate" value="<?= strIfSet($email) ?>">
               <label for="email">Email</label>
             </div>
+            <div><?= errorMessageForField($errors, 'password') ?></div>
             <div class="input-field col s12">
               <input id="password" name="password" type="password" class="validate">
               <label for="password">Password</label>
             </div>
+            <div><?= errorMessageForField($errors, 'retype_password') ?></div>
             <div class="input-field col s12">
               <input id="re-password" name="retype_password" type="password" class="validate">
               <label for="re-password">Retype Password</label>

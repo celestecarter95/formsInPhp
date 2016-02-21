@@ -72,6 +72,11 @@
         color: white;
         padding:15px 0;
     }
+
+    .error {
+        padding: 10px;
+        color: red;
+    }
     </style>
 
 </head>
